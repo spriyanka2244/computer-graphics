@@ -1,0 +1,31 @@
+#include "stdafx.h"
+#include "glut.h"
+
+void line()
+  {
+	  glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
+	  glClearColor(1,0,0,1);
+	  glLineWidth(10);
+	  glBegin(GL_LINES);
+	 glColor3f(1.0,1.0,0.0);
+	glVertex2f(-10,-10);
+           glColor3f(1.0,0.0,1.0);
+		   glVertex2f(10,10);
+		   glEnd();
+		   glFlush();
+
+
+}
+
+
+int main(int argc ,char **argv)
+{
+	  glutInit(&argc,argv);
+	  glutInitDisplayMode(GLUT_RGB|GLUT_DEPTH);
+
+	  glutCreateWindow("2D line");
+
+	  glutDisplayFunc(line);
+	  glutMainLoop();
+
+}
